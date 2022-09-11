@@ -73,6 +73,13 @@ if ($Num1 + $Num2 == 30) {
 
 $multible3 = 30;
 
+if($multible3>0 && $multible3%3 == 0) {
+    echo"true";
+}else {
+    echo"false";
+
+}
+
 
 
 
@@ -143,7 +150,14 @@ if ($units <= 50) {
 echo "<br> $Total";
 
 
+//Write php script to check if a person is eligible to vote, minimum age required for voting is 18.
 
+$age=12;
+if($age >= 18) {
+    echo "<br> eligible";
+}else {
+    echo "<br> not eligible";
+}
 
 
 
