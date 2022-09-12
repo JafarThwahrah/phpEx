@@ -1,18 +1,18 @@
 <?php
 //Write a PHP script to see if the specified year is a leap year or not.
-function year_check($my_year)
-{
-    if ($my_year % 400 == 0)
-        print("It is a leap year");
-    else if ($my_year % 100 == 0)
-        print("It is not a leap year");
-    else if ($my_year % 4 == 0)
-        print("It is a leap year");
-    else
-        print("It is not a leap year");
-}
 $my_year = 1900;
-year_check($my_year);
+
+
+
+if ($my_year % 400 == 0)
+    print("It is a leap year");
+else if ($my_year % 100 == 0)
+    print("It is not a leap year");
+else if ($my_year % 4 == 0)
+    print("It is a leap year");
+else
+    print("It is not a leap year");
+
 
 
 //Write a PHP script to check the season depending on the inserted temperature if the temperature is below 20, we are in winter otherwise the season is summer.
@@ -73,11 +73,10 @@ if ($Num1 + $Num2 == 30) {
 
 $multible3 = 30;
 
-if($multible3>0 && $multible3%3 == 0) {
-    echo"true";
-}else {
-    echo"false";
-
+if ($multible3 > 0 && $multible3 % 3 == 0) {
+    echo "true";
+} else {
+    echo "false";
 }
 
 
@@ -150,12 +149,55 @@ if ($units <= 50) {
 echo "<br> $Total";
 
 
+
+
+
+//Write php script to make a calculator, the calculator should contain the four main operations 
+
+
+$operator = "+";
+$firstValue = 2;
+$secondValue = 2;
+
+switch ($operator) {
+    case '+':
+        echo "<br> $firstValue+$secondValue";
+        break;
+
+    case '-':
+        echo "<br> $firstValue-$secondValue";
+        break;
+
+    case '*':
+        echo "<br> $firstValue*$secondValue";
+        break;
+
+    case '/':
+        echo "<br> $firstValue/$secondValue";
+        break;
+    default:
+        echo "<br> please enter a valid operator";
+        break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Write php script to check if a person is eligible to vote, minimum age required for voting is 18.
 
-$age=12;
-if($age >= 18) {
+$age = 12;
+if ($age >= 18) {
     echo "<br> eligible";
-}else {
+} else {
     echo "<br> not eligible";
 }
 
