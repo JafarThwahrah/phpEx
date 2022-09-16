@@ -290,18 +290,58 @@ echo "<br><br>$colors3[4]";
 //Write a PHP script that inserts a specific new item in an array in any position.
 
 
-// $Array = array(1,2,3,4,5);
+$Array = array(1, 2, 3, 4, 5);
 // $Location= 4;
 // $NewItem='$';
 
-// array_splice($Array,4,$NewItem);
-
-
-// echo "<br>$Array";
-
+// array_splice(src_array, start_index, length, replace_array)
+array_splice($Array, $Array[2], 0, '$');
 
 
 
+echo "<br>";
+var_dump($Array);
+
+//Write a PHP script to sort the following associative array depending on the key value [asc] : 
+
+$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+
+asort($fruits);
+echo "<br>";
+
+var_dump($fruits);
+
+//Write a PHP script to calculate and display the average temperature for the recorded reads, also the script should display the list of the five lowest and the five highest temperatures 
+
+
+
+
+function temp(...$tem)
+{
+    $SUM = 0;
+    $i = 0;
+    $ArrayAscending = [];
+    foreach ($tem as $value) {
+        $SUM += $value;
+        $i++;
+        array_push($ArrayAscending, $value);
+    }
+    asort($ArrayAscending);
+    $lowestTemp = '';
+    for ($x = 0; $x < 7; $x++) {
+        $lowestTemp = "{$lowestTemp} {$ArrayAscending[$x]},";
+    }
+
+    $highestTem = '';
+    for ($z = $i - 1; $z >= ($i - 7); $z--) {
+        $highestTem = "{$highestTem} {$ArrayAscending[$z]},";
+    }
+
+    echo   "<br>List of seven lowest temperatures:" . $lowestTemp .   "<br>List of seven highest temperatures:" . $highestTem .   "<br>Average Tempretaures is:" . $SUM / $i;
+}
+
+
+echo "<br>" . temp(5, 6, 6, 4, 8, 8, 10, 50, 40);
 
 
 //Write a PHP script to check if the inserted number is a prime number 
@@ -309,18 +349,20 @@ echo "<br><br>$colors3[4]";
 
 
 
-// $isPrime = 7;
-
-// for($i = 2; $i < $isPrime; $i++) {
-//        if ($isPrime%$i == 0){
-//             print "isnt a Prime number";
-//        }else {
-//         print "is a Prime number";
-
-//        }
-// }
+$isPrime = 7;
 
 
+function prime($isPrime)
+{
+    for ($i = 2; $i < $isPrime; $i++) {
+        if ($isPrime % $i == 0) {
+            return "isnt a Prime number";
+        }
+    }
+    return "is a prime number";
+}
+echo "<br>";
+echo prime($isPrime);
 
 //Write a PHP script to reverse a string 
 
@@ -366,10 +408,6 @@ function swap($var1, $var2)
 
 
 echo "<br>" . swap($firstVar, $secondVar);
-
-
-
-
 
 
 
@@ -437,7 +475,165 @@ checkPalindrome("evacaniseebeesinacave");
 $duplicatedArray = [1, 1, 2, 1, 5, 4, 9, 5];
 function removeDuplicates($array)
 {
-    print_r(array_unique($array));
+    var_dump(array_unique($array));
 }
 echo "<br>";
 removeDuplicates($duplicatedArray);
+
+
+
+$array20 = [1, 1, 2, 1, 5, 4, 9, 5];
+function &dublicateRem($arr)
+{
+
+    $result = array();
+    foreach ($arr as $key => $value) {
+        if (!in_array($value, $result))
+            $result[$key] = $value;
+    }
+    return $result;
+}
+
+echo "<br>";
+var_dump(dublicateRem($array20));
+echo "<br>";
+
+
+
+
+
+
+
+//Write a PHP program to merge the following two arrays. 
+
+
+$array1 = array("color" => "red", 2, 4);
+$array2 = array("a", "b", "color" => "green", "shape" => "trapezoid", 4);
+$MergedArray = array_merge($array1, $array2);
+print_r($MergedArray);
+
+echo "<br>";
+
+
+
+
+
+
+
+//Write a PHP function to change the following array's and convert all the strings to upper case. 
+
+$upperCaseArray = array("Jafar", "banana");
+
+foreach ($upperCaseArray as &$value)
+    $value = strtoupper($value);
+
+print_r($upperCaseArray);
+
+
+
+
+//Write a PHP function to change the following array's and convert all the strings to lower case. 
+
+echo "<br>";
+
+$lowerCaseArray = array("JafFAAar", "banaBBFnaAA");
+
+foreach ($lowerCaseArray as &$value)
+    $value = strtolower($value);
+
+print_r($lowerCaseArray);
+
+
+
+
+// Write a PHP script which displays all the numbers between 200 and 250 that are divisible by 4. 
+
+for ($i = 200; $i <= 250; $i++) {
+
+    if ($i % 4 == 0) {
+        echo "<br>" . $i;
+    }
+}
+
+echo "<br>";
+
+
+
+
+
+
+//Write a PHP script to get the shortest/longest string length from an array. 
+
+
+
+$data = array(
+    "163",
+    "630",
+    "43",
+    "924",
+    "4",
+    "54"
+);
+
+$lengths = array_map('strlen', $data);
+
+echo "The shortest is " . min($lengths) .
+    ". The longest is " . max($lengths);
+
+echo "<br>";
+
+
+
+//Write a PHP script to generate unique random 10 numbers within a specific range. 
+
+echo (rand() . "<br>");
+echo (rand(11, 20));
+
+
+
+//Write a PHP script that returns the lowest integer in the array  that is not 0. 
+
+//Sample Input: $array1 = array( 2, 0, 10, 12, 6) 
+
+$lowestNumberisnt0 = array(2, 0, 10, 12, 6);
+
+foreach ($lowestNumberisnt0 as $value) {
+    if ($value == 0) {
+        continue;
+    }
+    return $value;
+}
+
+echo "<br>" . min($lowestNumberisnt0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $str = 'jafar';
+// function countR($str)
+// {
+//     $count = 0;
+//     for ($i = 0; $i < strlen($str); $i++) {
+//         if ($str[$i] == 'r') {
+//             $count++;
+//         }
+//     }
+//     echo "<br>";
+
+//     echo $count;
+// }
+// countR($str);
