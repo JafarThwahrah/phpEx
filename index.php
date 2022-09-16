@@ -597,14 +597,101 @@ echo (rand(11, 20));
 
 $lowestNumberisnt0 = array(2, 0, 10, 12, 6);
 
-foreach ($lowestNumberisnt0 as $value) {
-    if ($value == 0) {
-        continue;
+function removearrayele($arr){
+for ($i = 0; $i < count($arr); $i++){
+
+    if ($arr[$i] == 0){
+        unset($arr[$i]);
     }
-    return $value;
+}
+return $arr;
+}
+echo "<br>";
+var_dump(removearrayele($lowestNumberisnt0));
+echo "<br>" . min((removearrayele($lowestNumberisnt0)));
+
+
+
+
+
+//------------------------------------LOOPS----------------------------------//
+
+echo "<br>";
+
+//Create a script that displays 1-2-3-4-5-6-7-8-9-10 on one line. There will be no dash (-) at the start and end position. 
+
+for ($i=1;$i<=10; $i++){
+    if ($i==10){
+        echo $i;
+        break;
+    }else {
+        echo "$i-";
+    }
 }
 
-echo "<br>" . min($lowestNumberisnt0);
+
+
+//Create a script using a for loop to add all the integers between 0 and 30 and display the total. 
+$total=0;
+for ($i=0 ; $i<=30; $i++){
+ $total+= $i;
+}
+echo "<br>$total";
+
+
+
+
+//Create a script to generate the following pattern, using the nested for loop. 
+ 
+// Expected Output:
+ 
+// A A A A A 
+// A A A B B 
+// A A C C C 
+// A D D D D 
+// E E E E E
+echo "<br>";
+echo "<br>";
+
+
+$row=1;
+$counteachrow=1;
+
+for ($i=1;$i<=25;$i++){
+ 
+    if ($i==26){
+        break;
+    }
+
+    echo 
+    
+    $row==5
+    ?"E "
+    :($row==4 && $counteachrow>=3
+    ?'D '
+    :($row==3 && $counteachrow>=4
+    ?'C '
+    :($row==2 && $counteachrow>=5
+    ?'B '
+    :'A ')));
+
+    // if($row==1){
+    // echo "A";
+    // $counteachrow+=1;
+    // }else if ($row==2 &&$counteachrow>=4){
+    //  echo "B";
+    // }
+    if ($i%5==0){
+        echo "<br>";
+        $row+=1;
+        $counteachrow=1;
+    }
+    $counteachrow++;
+}
+
+
+
+
 
 
 
