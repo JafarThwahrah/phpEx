@@ -344,6 +344,17 @@ function temp(...$tem)
 echo "<br>" . temp(5, 6, 6, 4, 8, 8, 10, 50, 40);
 
 
+
+
+
+
+//functions start from here
+
+
+
+
+
+
 //Write a PHP script to check if the inserted number is a prime number 
 
 
@@ -597,14 +608,15 @@ echo (rand(11, 20));
 
 $lowestNumberisnt0 = array(2, 0, 10, 12, 6);
 
-function removearrayele($arr){
-for ($i = 0; $i < count($arr); $i++){
+function removearrayele($arr)
+{
+    for ($i = 0; $i < count($arr); $i++) {
 
-    if ($arr[$i] == 0){
-        unset($arr[$i]);
+        if ($arr[$i] == 0) {
+            unset($arr[$i]);
+        }
     }
-}
-return $arr;
+    return $arr;
 }
 echo "<br>";
 var_dump(removearrayele($lowestNumberisnt0));
@@ -620,11 +632,11 @@ echo "<br>";
 
 //Create a script that displays 1-2-3-4-5-6-7-8-9-10 on one line. There will be no dash (-) at the start and end position. 
 
-for ($i=1;$i<=10; $i++){
-    if ($i==10){
+for ($i = 1; $i <= 10; $i++) {
+    if ($i == 10) {
         echo $i;
         break;
-    }else {
+    } else {
         echo "$i-";
     }
 }
@@ -632,9 +644,9 @@ for ($i=1;$i<=10; $i++){
 
 
 //Create a script using a for loop to add all the integers between 0 and 30 and display the total. 
-$total=0;
-for ($i=0 ; $i<=30; $i++){
- $total+= $i;
+$total = 0;
+for ($i = 0; $i <= 30; $i++) {
+    $total += $i;
 }
 echo "<br>$total";
 
@@ -642,9 +654,9 @@ echo "<br>$total";
 
 
 //Create a script to generate the following pattern, using the nested for loop. 
- 
+
 // Expected Output:
- 
+
 // A A A A A 
 // A A A B B 
 // A A C C C 
@@ -654,37 +666,74 @@ echo "<br>";
 echo "<br>";
 
 
-$row=1;
-$counteachrow=1;
+$row = 1;
+$counteachrow = 1;
 
-for ($i=1;$i<=25;$i++){
- 
-    if ($i==26){
+for ($i = 1; $i <= 25; $i++) {
+
+    if ($i == 26) {
         break;
     }
 
-    echo 
-    
-    $row==5
-    ?"E "
-    :($row==4 && $counteachrow>=3
-    ?'D '
-    :($row==3 && $counteachrow>=4
-    ?'C '
-    :($row==2 && $counteachrow>=5
-    ?'B '
-    :'A ')));
+    echo
 
-    // if($row==1){
-    // echo "A";
-    // $counteachrow+=1;
-    // }else if ($row==2 &&$counteachrow>=4){
-    //  echo "B";
-    // }
-    if ($i%5==0){
+    $row == 5
+        ? "E "
+        : ($row == 4 && $counteachrow >= 3
+            ? 'D '
+            : ($row == 3 && $counteachrow >= 4
+                ? 'C '
+                : ($row == 2 && $counteachrow >= 5
+                    ? 'B '
+                    : 'A ')));
+
+
+    if ($i % 5 == 0) {
         echo "<br>";
-        $row+=1;
-        $counteachrow=1;
+        $row += 1;
+        $counteachrow = 1;
+    }
+    $counteachrow++;
+}
+
+echo "<br>";
+
+
+//Create a script to generate the following pattern, using the nested for loop. 
+
+// Expected Output:
+
+// 1 1 1 1 1 
+// 1 1 1 2 2 
+// 1 1 3 3 3 
+// 1 4 4 4 4 
+// 5 5 5 5 5
+$row = 1;
+$counteachrow = 1;
+
+for ($i = 1; $i <= 25; $i++) {
+
+    if ($i == 26) {
+        break;
+    }
+
+    echo
+
+    $row == 5
+        ? "5 "
+        : ($row == 4 && $counteachrow >= 3
+            ? '4 '
+            : ($row == 3 && $counteachrow >= 4
+                ? '3 '
+                : ($row == 2 && $counteachrow >= 5
+                    ? '2 '
+                    : '1 ')));
+
+
+    if ($i % 5 == 0) {
+        echo "<br>";
+        $row += 1;
+        $counteachrow = 1;
     }
     $counteachrow++;
 }
@@ -694,6 +743,65 @@ for ($i=1;$i<=25;$i++){
 
 
 
+//Create a script to generate the following pattern, using the nested for loop. 
+
+
+// Expected Output:
+
+// 1 0 0 0 0 
+// 0 2 0 0 0 
+// 0 0 3 0 0 
+// 0 0 0 4 0 
+// 0 0 0 0 5
+$row = 1;
+$counteachrow = 1;
+
+echo "<br>";
+
+for ($i = 1; $i <= 25; $i++) {
+
+    if ($i == 26) {
+        break;
+    }
+
+    echo
+
+    $row == 5 && $counteachrow == 5
+        ? "5 "
+        : ($row == 4 && $counteachrow == 4
+            ? '4 '
+            : ($row == 3 && $counteachrow == 3
+                ? '3 '
+                : ($row == 2 && $counteachrow == 2
+                    ? '2 '
+                    : ($row == 1 && $counteachrow == 1
+                        ? '1 '
+                        : '0 '))));
+
+
+    if ($i % 5 == 0) {
+        echo "<br>";
+        $row += 1;
+        $counteachrow = 0;
+    }
+    $counteachrow++;
+}
+
+
+
+//Write a program to calculate and print the factorial of a number using a for loop. The factorial of a number is the product of all integers up to and including that number.
+
+
+function factorial($number)
+{
+    $Total = 1;
+    for ($i = 1; $i <= $number; $i++) {
+        $Total *= $i;
+    }
+    return $Total;
+}
+
+echo "<br>" . factorial(5);
 
 
 
@@ -702,25 +810,271 @@ for ($i=1;$i<=25;$i++){
 
 
 
+// Write a program to calculate and print the Fibonacci sequence using a for loop.
+// Fibonacci is a series of numbers where a number is the sum of previous two numbers. Starting with 0 and 1, the sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21, and so on. 
+
+// Expected Output: 0, 1, 1, 2, 3, 5, 8, 13, 21, …
+
+/* Print fiboancci series upto 12 elements. */
+
+echo "<br>";
+
+
+$num = 8;
+function series($num)
+{
+    if ($num == 0) {
+        return 0;
+    } else if ($num == 1) {
+        return 1;
+    } else {
+        return (series($num - 1) + series($num - 2));
+    }
+}
+for ($i = 0; $i < $num; $i++) {
+    echo series($i);
+    echo "\n";
+}
+
+//Write a program which will count the "c" characters in the text "Orange Coding Academy". 
+
+$stringOrange = "Orange Coding Academy";
+echo $stringOrange[0];
+
+function countC($str)
+{
+    $counter = 0;
+    for ($i = 0; $i < strlen($str); $i++) {
+        $str[$i] == 'c' || $str[$i] == 'C'
+            ? $counter++
+            : 'do nothing';
+    }
+    return $counter;
+}
+
+echo "<br>" . countC($stringOrange);
+
+?>
+<!-- //Write a PHP script that creates the following table using for loops. Add cellpadding="3px" and cell spacing="0px" to the table tag.  -->
+
+
+<table align="left" border="1" cellpadding="3" cellspacing="1">
+
+    <?php
+
+    echo "<br>";
+
+    for ($row = 1; $row <= 6; $row++) {
+        echo "<tr>";
+        for ($col = 1; $col <= 5; $col++) {
+            echo "<td>$row * $col = " . $row * $col . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+
+
+
+    ?>
+
+</table>
+
+<?php
+// Write a PHP program that repeats integers from 1 to 50. For multiples of three, print "Fizz" instead of the number, and for multiples of five print "Buzz". For numbers that are multiples of both three and five, print "FizzBuzz".
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+
+for ($i = 1; $i <= 50; $i++) {
+    echo
+
+    $i % 5 == 0 && $i % 3 == 0
+        ? " FizzBuzz "
+        : ($i % 5 == 0
+            ? " Buzz "
+            : ($i % 3 == 0
+                ? " Fizz "
+                : " $i "));
+}
+
+
+//According to Wikipedia Floyd's triangle is a right-angled triangular array of natural numbers, used in computer science education. It is named after Robert Floyd. It is defined by filling the rows of the triangle with consecutive numbers, starting with a 1 in the top left corner:
+// Sample output:
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+echo "<br>";
+
+
+function FloydsTriangle($n)
+{
+    $val = 1;
+
+    // loop for number of lines
+    for ($i = 1; $i <= $n; $i++) {
+        // echo
+        // $i == 1
+        //     ? str_repeat('&nbsp;', 10)
+        //     : ($i == 2
+        //         ? str_repeat('&nbsp;', 8)
+        //         : ($i == 3
+        //             ? str_repeat('&nbsp;', 6)
+        //             : ($i == 4
+        //                 ? str_repeat('&nbsp;', 4)
+        //                 : ($i == 5
+        //                     ? str_repeat('&nbsp;', 0)
+        //                     : ''))));
+        // loop for number of elements
+        // in each line
+        for ($j = 1; $j <= $i; $j++) {
+
+            echo ($val . " ");
+
+            $val++;
+        }
+        echo "<br>";
+    }
+}
+
+$n = 5;
+FloydsTriangle($n);
+
+
+// Write a PHP program to print the following pattern. 
+
+// Expected Output:
+
+//      A 
+//     A B 
+//    A B C 
+//   A B C D 
+//  A B C D E 
+//   A B C D 
+//    A B C 
+//     A B 
+//      A
+
+
+echo "<br>";
+echo "<br>";
+
+echo "<br>";
+
+function diamondPattern($row)
+{
+    for ($i = 1; $i <= $row; $i++) {
+
+
+
+        echo
+        $i == 1
+            ? str_repeat('&nbsp;', 10)
+            : ($i == 2
+                ? str_repeat('&nbsp;', 8)
+                : ($i == 3
+                    ? str_repeat('&nbsp;', 6)
+                    : ($i == 4
+                        ? str_repeat('&nbsp;', 4)
+                        : ($i == 5
+                            ? str_repeat('&nbsp;', 2)
+                            : ''))));
+        for ($j = 1; $j <= $i; $j++) {
+            echo
+            $i == 1
+                ? 'A '
+                : ($i >= 2 && $j == 2
+                    ? 'B '
+                    : ($i >= 3 && $j == 3
+                        ? 'C '
+                        : ($i >= 4 && $j == 4
+                            ? 'D '
+                            : ($i >= 5 && $j == 5
+                                ? 'E '
+                                : 'A '))));
+            // echo $j;
+
+        }
+        echo "<br>";
+    }
+
+
+
+    //second loop
+
+
+    for ($i = $row - 1; $i >= 0; $i--) {
+
+
+
+        echo
+        $i == 1
+            ? str_repeat('&nbsp;', 10)
+            : ($i == 2
+                ? str_repeat('&nbsp;', 8)
+                : ($i == 3
+                    ? str_repeat('&nbsp;', 6)
+                    : ($i == 4
+                        ? str_repeat('&nbsp;', 4)
+                        : ($i == 5
+                            ? str_repeat('&nbsp;', 2)
+                            : ''))));
+        for ($j = 1; $j <= $i; $j++) {
+            echo
+            $i == 1
+                ? 'A '
+                : ($i >= 2 && $j == 2
+                    ? 'B '
+                    : ($i >= 3 && $j == 3
+                        ? 'C '
+                        : ($i >= 4 && $j == 4
+                            ? 'D '
+                            : ($i >= 5 && $j == 5
+                                ? 'E '
+                                : 'A '))));
+            // echo $j;
+
+        }
+        echo "<br>";
+    }
+}
+
+diamondPattern(5);
 
 
 
 
 
 
+//------------------------------------------------------------------------------------------------------------------
 
 
-// $str = 'jafar';
-// function countR($str)
-// {
-//     $count = 0;
-//     for ($i = 0; $i < strlen($str); $i++) {
-//         if ($str[$i] == 'r') {
-//             $count++;
-//         }
-//     }
-//     echo "<br>";
 
-//     echo $count;
-// }
-// countR($str);
+
+
+$str = 'jafar';
+function countR($str)
+{
+    $count = 0;
+    for ($i = 0; $i < strlen($str); $i++) {
+        if ($str[$i] == 'r') {
+            $count++;
+        }
+    }
+    echo "<br>";
+
+    echo $count;
+}
+countR($str);
+
+?>
